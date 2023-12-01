@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using OpenLibrary.Application.Dtos;
 using OpenLibrary.Application.Interfaces;
+using OpenLibrary.Domain;
 
 namespace OpenLibrary.Application.Services;
 
@@ -65,7 +66,7 @@ public class BookService : IBookService
             var bookInfo = await FetchAndCacheBookDataAsync(isbn);
             if (bookInfo != null)
             {
-                csv.AppendLine($"{rowNumber};{"Server"};{isbn};{bookInfo.Title};{bookInfo.Subtitle};{bookInfo.Authors};{bookInfo.NumberOfPages};{bookInfo.PublishDate}");
+                csv.AppendLine($"{rowNumber};{bookLocation};{isbn};{bookInfo.Title};{bookInfo.Subtitle};{bookInfo.Authors};{bookInfo.NumberOfPages};{bookInfo.PublishDate}");
                 rowNumber++;
             }
         }
@@ -78,14 +79,14 @@ public class BookService : IBookService
     {
         if (_cacheService.TryGetValue(isbn, out var bookDto))
         {
-            bookLocation = "Cache";
+            bookLocation = BookLocation.Cache.GetDescription();
             return bookDto;
         }
 
         bookDto = await _openLibraryService.FetchBookDataAsync(isbn);
         if (bookDto != null)
         {
-            bookLocation = "Server";
+            bookLocation = BookLocation.Server.GetDescription();
             _cacheService.Set(isbn, bookDto);
         }
 
@@ -97,7 +98,7 @@ public class BookService : IBookService
     {
         var rows = content.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
         var isbns = rows.SelectMany(row => row.Split(','));
-        return isbns.ToArray();
+        return isbns.Distinct().ToArray();
     }
 
 }

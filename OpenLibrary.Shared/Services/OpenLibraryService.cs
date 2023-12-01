@@ -59,7 +59,7 @@ public class OpenLibraryService : IOpenLibraryService
             ISBN = isbn,
             Title = bookData.title,
             Subtitle = bookData.subtitle,
-            Authors = string.Join(", ", (bookData.authors as IEnumerable<dynamic>).Select(author => (string)author.name).ToList()),
+            Authors = string.Join("; ", (bookData.authors as IEnumerable<dynamic>).Select(author => (string)author.name).ToList()),
             NumberOfPages = bookData.number_of_pages,
             PublishDate = bookData.publish_date
         };
