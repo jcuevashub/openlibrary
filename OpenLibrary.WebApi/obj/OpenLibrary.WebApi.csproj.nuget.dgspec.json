@@ -42,9 +42,21 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "AutoMapper": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Reflection": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -140,6 +152,160 @@
         }
       }
     },
+    "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Infrastructure/OpenLibrary.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Infrastructure/OpenLibrary.Infrastructure.csproj",
+        "projectName": "OpenLibrary.Infrastructure",
+        "projectPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Infrastructure/OpenLibrary.Infrastructure.csproj",
+        "packagesPath": "/Users/jacksoncuevas/.nuget/packages/",
+        "outputPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jacksoncuevas/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Domain/OpenLibrary.Domain.csproj": {
+                "projectPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Domain/OpenLibrary.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Reflection": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Shared/OpenLibrary.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Shared/OpenLibrary.Shared.csproj",
+        "projectName": "OpenLibrary.Shared",
+        "projectPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Shared/OpenLibrary.Shared.csproj",
+        "packagesPath": "/Users/jacksoncuevas/.nuget/packages/",
+        "outputPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jacksoncuevas/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Application/OpenLibrary.Application.csproj": {
+                "projectPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Application/OpenLibrary.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.WebApi/OpenLibrary.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -164,6 +330,12 @@
             "projectReferences": {
               "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Application/OpenLibrary.Application.csproj": {
                 "projectPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Application/OpenLibrary.Application.csproj"
+              },
+              "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Infrastructure/OpenLibrary.Infrastructure.csproj": {
+                "projectPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Infrastructure/OpenLibrary.Infrastructure.csproj"
+              },
+              "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Shared/OpenLibrary.Shared.csproj": {
+                "projectPath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Shared/OpenLibrary.Shared.csproj"
               }
             }
           }

@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
+using OpenLibrary.Application.Interfaces;
+using OpenLibrary.Application.Services;
+using Rent2Park.Application.AutoMapper;
 
-namespace OpenLibrary.Application
+namespace OpenLibrary.Application;
+
+public static class ServicesExtensions
 {
-    internal class ServicesExtensions
+    public static void ConfigureApplication(this IServiceCollection services)
     {
+        services.AddAutoMapper(typeof(AutoMapperProfile));
+        services.AddTransient<IBookService, BookService>();
     }
 }
