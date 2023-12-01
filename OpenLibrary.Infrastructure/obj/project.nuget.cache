@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "fC1EL4ey07xp6CyCkHUOjyD1R6Zj2Wz6b3Y0ku8hZx31K0bS6AXF8rP42BxGKkpNxc5Vkicvam4Kc+k7K0kKLA==",
+  "dgSpecHash": "5VZwyJw9R1Xc0x0loZ3c25rwKqRf++BlRvNEZb77HyqqwrkQqO7a32CIWSxVcnyR0yELbHIZLlfY2rgZQANiow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jacks\\source\\repos\\OpenLibrary.WebApi\\OpenLibrary.Infrastructure\\OpenLibrary.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Infrastructure/OpenLibrary.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/Users/jacksoncuevas/.nuget/packages/microsoft.netcore.app.ref/7.0.14/microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "/Users/jacksoncuevas/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.14/microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }

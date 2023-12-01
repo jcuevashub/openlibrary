@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/4xf7viFlmRqhqzquitXRxIUSr1gYFo3gXv5OBf3kYl9F1AkM7VFLBo7k5gtDDCWYscoDYIq+uCO1PgpMIfadw==",
+  "dgSpecHash": "FlZsqGpcFgkwSJJEI130/01GVaRZBCn0+cz81T4JEwqihwzSwYBxk4JC9OiiDfLDb4ZDhvgUPlUyODK6wRVGuQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jacks\\source\\repos\\OpenLibrary.WebApi\\OpenLibrary.Application\\OpenLibrary.Application.csproj",
+  "projectFilePath": "/Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Application/OpenLibrary.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jacks\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\jacks\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+    "/Users/jacksoncuevas/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/jacksoncuevas/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/jacksoncuevas/.nuget/packages/microsoft.netcore.app.ref/7.0.14/microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "/Users/jacksoncuevas/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.14/microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }

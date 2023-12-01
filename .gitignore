@@ -363,3 +363,9 @@ docs/bg/*
 .name
 *.vsidx
 *.targets
+OpenLibrary.Application/obj/
+OpenLibrary.Domain/obj/
+OpenLibrary.Infrastructure/obj/
+OpenLibrary.Shared/obj/
+OpenLibrary.WebApi/obj/
+*.cache

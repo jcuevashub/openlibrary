@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OpenLibrary.Application
-build_property.ProjectDir = C:\Users\jacks\source\repos\OpenLibrary.WebApi\OpenLibrary.Application\
+build_property.ProjectDir = /Users/jacksoncuevas/Documents/GitHub/openlibrary/OpenLibrary.Application/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
