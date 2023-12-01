@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLibrary.Infrastructure"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLibrary.Shared", "OpenLibrary.Shared\OpenLibrary.Shared.csproj", "{B21C24B8-5300-4A36-9322-4C80D4156E29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLibrary.UnitTest", "OpenLibrary.UnitTest\OpenLibrary.UnitTest.csproj", "{48494296-6D25-44D7-9B73-FC288AD0EA7A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
