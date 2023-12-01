@@ -1,5 +1,4 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OpenLibrary.Application.Interfaces;
 
 namespace OpenLibrary.WebApi.Controllers;
