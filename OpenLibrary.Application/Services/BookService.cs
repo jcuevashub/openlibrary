@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using OpenLibrary.Application.Dtos;
 using OpenLibrary.Application.Interfaces;
 using OpenLibrary.Domain;
+using ClosedXML.Excel;
 
 namespace OpenLibrary.Application.Services;
 
@@ -17,24 +18,48 @@ public class BookService : IBookService
         _openLibraryService = openLibraryService;
     }
 
-    public async Task<string> GetBooksInfoFromFileAsync( IFormFile file)
+    public async Task<string> GetBooksInfoFromFileAsync(IFormFile file)
     {
-        var csv = new StringBuilder("Row Number;Data Retrieval Type;ISBN;Title;Subtitle;Author Name(s);Number of Pages;Publish Date\n");
-        int rowNumber = 1;
+        var tempDirectory = Path.GetTempPath();
+        var filePath = Path.Combine(tempDirectory, "isbn_list.xlsx");
 
-        var isbns = await ProcessUniqueNumbersAsync(file);
-
-        foreach (var isbn in isbns)
+        using (var workbook = new XLWorkbook())
         {
-            var bookInfo = await FetchAndCacheBookDataAsync(isbn);
-            if (bookInfo != null)
+            var worksheet = workbook.Worksheets.Add("Books");
+            worksheet.Cell("A1").Value = "Row Number";
+            worksheet.Cell("B1").Value = "Data Retrieval Type";
+            worksheet.Cell("C1").Value = "ISBN";
+            worksheet.Cell("D1").Value = "Title";
+            worksheet.Cell("E1").Value = "Subtitle";
+            worksheet.Cell("F1").Value = "Author Name(s)";
+            worksheet.Cell("G1").Value = "Number of Pages";
+            worksheet.Cell("H1").Value = "Publish Date";
+
+            var isbns = await ProcessUniqueNumbersAsync(file);
+            int rowNumber = 2;
+
+            foreach (var isbn in isbns)
             {
-                csv.AppendLine($"{rowNumber};{bookLocation};{isbn};{bookInfo.Title};{bookInfo.Subtitle};{bookInfo.Authors};{bookInfo.NumberOfPages};{bookInfo.PublishDate}");
-                rowNumber++;
+                var bookInfo = await FetchAndCacheBookDataAsync(isbn);
+                if (bookInfo != null)
+                {
+                    worksheet.Cell(rowNumber, 1).Value = rowNumber - 1;
+                    worksheet.Cell(rowNumber, 2).Value = bookLocation;
+                    worksheet.Cell(rowNumber, 3).Value = isbn;
+                    worksheet.Cell(rowNumber, 4).Value = bookInfo.Title;
+                    worksheet.Cell(rowNumber, 5).Value = bookInfo.Subtitle;
+                    worksheet.Cell(rowNumber, 6).Value = bookInfo.Authors;
+                    worksheet.Cell(rowNumber, 7).Value = bookInfo.NumberOfPages;
+                    worksheet.Cell(rowNumber, 8).Value = bookInfo.PublishDate;
+
+                    rowNumber++;
+                }
             }
+
+            workbook.SaveAs(filePath);
         }
 
-        return csv.ToString();
+        return filePath;
     }
 
     private async Task<BookDto> FetchAndCacheBookDataAsync(string isbn)

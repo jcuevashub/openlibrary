@@ -13,17 +13,29 @@ public class BooksController : ControllerBase
     }
 
     [HttpPost("upload-file")]
-    public async Task<IActionResult> UploadFile(string filePath, IFormFile file)
+    public async Task<IActionResult> UploadFile(IFormFile file)
     {
+
         if (file == null || file.Length == 0)
         {
             return BadRequest("Invalid file");
         }
 
-        var book = await _bookService.GetBooksInfoFromFileAsync(filePath,file);
-        if (book == null)
+        var filePath = await _bookService.GetBooksInfoFromFileAsync(file);
+        if (filePath == null)
             return NotFound();
-        return Ok(book);
+
+        var memoryStream = new MemoryStream();
+        using (var stream = new FileStream(filePath, FileMode.Open))
+        {
+            await stream.CopyToAsync(memoryStream);
+        }
+        memoryStream.Position = 0;
+
+        var contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+        var fileName = "isbn_list.xlsx";
+
+        return File(memoryStream, contentType, fileName);
     }
 }
 
